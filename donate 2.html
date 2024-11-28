@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="web project.css">
+    <title>Donate to Local Food Bank</title>
+</head>
+<body>
+    <header>
+        <h1>Support Your Local Food Bank</h1>
+        <nav>
+            <button><a href="web project.html">Home</a></button>
+            <button><a href="volunteer 2.html">Volunteer</a></button>
+            <button><a href="needed-items 2.html">Needed Items</a></button>
+            <button><a href="contact 2.html">Contact</a></button>
+            <button><a href="donate 2.html">Donate</a></button>
+        </nav>
+    </header>
+    <main>
+        <h2 class="heading">How to Donate</h2>
+        <img src="C:\Users\yaza\.vscode\web project 2\The needy.jpg" alt="charity quote" class="quote">
+
+        <p>Your contributions help us provide food and support to those in need. Here is how you can donate:</p><br>
+
+        <h3>Monetary Donations</h3>
+        <p>You can make a secure online donation through our payment processor.</p><br>
+        <a href="https://history.paypal.com/pg/cshelp/article/what-is-paypalme-help432" class="donate-button" onclick="donateFeedback(event)">Donate Now</a><br><br>
+
+        <h3>Food Donations</h3>
+        <p>We accept non-perishable food items. Here are some suggestions:</p>
+
+        <h5>Please visit page</h5>
+        <ul class="social-media">
+            <li><a href="needed-items.html">Donate Needed Items</a></li>
+        </ul>
+
+        <br>
+        
+        <h3>Drop-off Location</h3>
+        <p>You can drop off your donations at our food bank location:</p>
+        <address>
+            Local Food Bank<br>
+            Valhalla Farm<br>
+            Plot 1, Burma Valley<br>
+            Mutare.
+        </address>
+    </main>
+    <footer>
+        <p>&copy; 2024 Local Food Bank. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to enhance dynamic capabilities -->
+    <script>
+        // Function to provide feedback when the donate button is clicked
+        function donateFeedback(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            alert('Thank you for your willingness to donate! You will be redirected to the donation page.');
+            window.location.href = event.target.href; // Redirect to the donation link
+        }
+    </script>
+</body>
+</html>
+

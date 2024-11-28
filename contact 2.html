@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="web project.css">
+    <title>Contact Us</title>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <button><a href="web project.html">Home</a></button>
+            <button><a href="volunteer 2.html">Volunteer</a></button>
+            <button><a href="needed-items 2.html">Needed Items</a></button>
+            <button><a href="contact 2.html">Contact</a></button>
+            <button><a href="donate 2.html">Donate</a></button>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>LET US KNOW WHAT YOU CAN GIVE</h2>
+            <h5><i>Kindly enter your details below</i></h5>
+            <!-- Contact form for user inquiries -->
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone (optional):</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="interest">What are you willing to give from the needed items list?</label>
+                <select id="interest" name="interest" required>
+                    <option value="">--Select an item--</option>
+                    <option value="Canned Vegetables - 100 cans">1. Canned Vegetables - 100 cans</option>
+                    <option value="Canned Fruits - 80 cans">2. Canned Fruits - 80 cans</option> 
+                    <option value="Pasta - 50 boxes">3. Pasta - 50 boxes</option>
+                    <option value="Rice - 30 bags">4. Rice - 30 bags</option>
+                    <option value="Dry Beans - 40 bags">5. Dry Beans - 40 bags</option>
+                    <option value="Peanut Butter - 60 jars">6. Peanut Butter - 60 jars</option>
+                    <option value="Cereal - 50 boxes">7. Cereal - 50 boxes</option>
+                    <option value="Canned Soup - 70 cans">8. Canned Soup - 70 cans</option>
+                    <option value="Cooking Oil - 20 bottles">9. Cooking Oil - 20 bottles</option>
+                    <option value="Baby Food - 40 jars">10. Baby Food - 40 jars</option>
+                    <option value="Other">11. Any other - If more than one item or other, please specify in detail in the text area below.</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="button" onclick="submitContactForm()">Send Message</button>
+            </form>
+        </section>
+        
+        <br>
+
+        <section>
+            <h2>Our Contact Details</h2>
+            <!-- Displaying organization's contact information -->
+            <p><strong>Address:</strong> Valhalla Plot 1 Burma Valley, Mutare Zimbabwe</p>
+            <p><strong>Phone:</strong> (263)774427620</p>
+            <p><strong>Email:</strong> <a href="mailto:zrumema@gmail.com" class="email">zrumema@gmail.com</a></p>
+            <p><strong>Social Media:</strong></p>
+            <ul class="social-media">
+                <li><a href="https://www.facebook.com/anorldsimbarashe.mbetsa?mibextid=ZbWKwL">Facebook</a></li>
+                <li><a href="">Twitter</a></li>
+                <li><a href="https://www.instagram.com/anorldsimbarashe/profilecard/?igsh=YjB0c29hZ3hkN2I1">Instagram</a></li>
+            </ul>
+            <p><strong>Operating Hours:</strong> Monday - Friday, 9 AM - 5 PM</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Local Food Bank. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to enhance dynamic capabilities -->
+    <script>
+        // Function to handle form submission
+        function submitContactForm() {
+            const contactData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                interest: document.getElementById('interest').value,
+                message: document.getElementById('message').value
+            };
+
+            // Store the contact data in local storage
+            localStorage.setItem('contactData', JSON.stringify(contactData));
+            alert('Thank you for your message! Your information has been saved.');
+
+            // Reset the form fields
+            document.getElementById('contactForm').reset();
+        }
+
+        // Load data on page load
+        window.onload = function() {
+            const savedData = JSON.parse(localStorage.getItem('contactData'));
+            if (savedData) {
+                document.getElementById('name').value = savedData.name || '';
+                document.getElementById('email').value = savedData.email || '';
+                document.getElementById('phone').value = savedData.phone || '';
+                document.getElementById('interest').value = savedData.interest || '';
+                document.getElementById('message').value = savedData.message || '';
+            }
+        };
+    </script>
+</body>
+</html>
+
